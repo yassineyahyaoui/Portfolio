@@ -8,7 +8,7 @@ let water = document.getElementById("water");
 let header = document.getElementById("header");
 
 document.addEventListener("scroll", () => {
-    let value = scrollY;
+    let value = document.scrollY;
 
     text.style.top = 50 + value * -0.5 + "%";
     bird1.style.top = value * -1.5 + "px";

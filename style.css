@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Rancho&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 html {
   box-sizing: border-box;
@@ -109,7 +111,7 @@ body {
   font-family: "poppins", sans-serif;
 }
 
-#btn {
+#explore {
   text-decoration: none;
   display: inline-block;
   padding: 8px 30px;
@@ -124,81 +126,82 @@ body {
   transition: 0.5s background-color ease;
 }
 
-#btn:hover {
-    background-color: rgb(255,255,255,0.5);
+#explore:hover {
+  background-color: rgb(255, 255, 255, 0.5);
 }
 
 .skills {
-    position: relative;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    padding: 76px 40px;
-    background: #094b65;
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  padding: 76px 40px;
+  background: #094b65;
 }
 
 .skills img {
-    margin-left: 20px;
-    margin-top: 20px;
-    cursor: pointer;
-    transition: transform 0.5s ease;
+  margin-left: 20px;
+  margin-top: 20px;
+  cursor: pointer;
+  transition: transform 0.5s ease;
 }
 
 .skills img:hover {
-    transform: rotateZ(20deg);
-    transition: transform 0.5s ease;
+  transform: rotateZ(20deg);
+  transition: transform 0.5s ease;
 }
 
 #wave-section {
-    height: 100px;
-    background-color: #094b65;
+  height: 100px;
+  background-color: #094b65;
 }
 
 .wave {
-    position: absolute;
-    bottom: 1;
-    left: 0;
-    width: 100%;
-    height: 100px;
-    background: url(./img/wave.png);
-    background-size: 1000px 100px;
-    animation: animate 4s ease-in-out infinite;
-    animation-delay: calc(var(--i) * 0.25s);
+  position: absolute;
+  bottom: 1;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: url(./img/wave.png);
+  background-size: 1000px 100px;
+  animation: animate 4s ease-in-out infinite;
+  animation-delay: calc(var(--i) * 0.25s);
 }
 
 .wave#wave1 {
-    z-index: 1000;
-    opacity: 1;
-    background-position: 400px;
+  z-index: 1000;
+  opacity: 1;
+  background-position: 400px;
 }
 
 .wave#wave2 {
-    z-index: 999;
-    opacity: 0.5;
-    background-position: 300px;
+  z-index: 999;
+  opacity: 0.5;
+  background-position: 300px;
 }
 
 .wave#wave3 {
-    z-index: 998;
-    opacity: 0.2;
-    background-position: 200px;
+  z-index: 998;
+  opacity: 0.2;
+  background-position: 200px;
 }
 
 .wave#wave4 {
-    z-index: 999;
-    opacity: 0.7;
-    background-position: 100px;
+  z-index: 999;
+  opacity: 0.7;
+  background-position: 100px;
 }
 
 @keyframes animate {
-    0%, 100% {
-        transform: translateY(0px);
-    }
-    50% {
-        transform: translateY(10px);
-    }
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(10px);
+  }
 }
 
 .sec {
@@ -216,4 +219,146 @@ body {
 .sec p {
   font-size: 1em;
   color: #000;
+}
+
+/**/
+
+#about-section {
+  margin-bottom: 70px;
+  font-family: "Quicksand", sans-serif;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.about {
+  text-align: left;
+  max-width: 500px;
+  padding: 25px 50px 80px 50px;
+  box-shadow: 0 20px 50px -20px rgb(0 0 0 / 50%);
+  margin-top: 50px;
+}
+
+.about h1 {
+  color: black;
+  font-size: 3.3333rem;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.about h5 {
+  font-size: 1.2rem;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+.about p {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.about a {
+  font-family: "Montserrat", sans-serif;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.8125rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  padding: 0.9375rem 1.875rem;
+  background-color: #ede947;
+  border-radius: 50px;
+  line-height: 1;
+  color: black;
+}
+
+.left h1 {
+  font-family: "Quicksand", sans-serif;
+  font-size: 50px;
+}
+
+/**/
+
+.arrow {
+  margin-bottom: 20px;
+}
+
+.blue {
+  color: #29b6f6;
+}
+
+.green {
+  color: #9ccc65;
+}
+
+.purple {
+  color: #ba68c8;
+}
+
+.cyan {
+  color: #4dd0e1;
+}
+
+.red {
+  color: #ef5350;
+}
+
+.card {
+  cursor: pointer;
+  perspective: 150rem;
+  height: 15rem;
+  width: 30rem;
+  position: relative;
+  font-family: Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console",
+    "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono",
+    "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier,
+    monospace;
+}
+
+.card-side {
+  height: 15rem;
+  transition: all 1s ease;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: auto;
+  width: 30rem;
+  backface-visibility: hidden;
+  border-radius: 3px;
+  overflow: hidden;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
+  color: #fff !important;
+}
+
+.front {
+  background-color: #1c1c1c;
+}
+
+.back {
+  transform: rotateY(180deg);
+  background-color: #1c1c1c;
+}
+
+.card:hover .front {
+  transform: rotateY(-180deg);
+}
+
+.card:hover .back {
+  transform: rotateY(0deg);
+}
+
+.card-content {
+  height: 15rem;
+  background-color: #1c1c1c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-content p {
+  margin-left: 1rem;
+}
+.card-content p > .space {
+  margin-left: 2rem;
 }

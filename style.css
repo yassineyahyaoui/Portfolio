@@ -30,14 +30,14 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  padding: 30px 100px;
+  padding: 20px 100px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
   z-index: 10000;
 }
-#header .logo {
+#header #logo {
   color: #094b65;
   font-weight: 700;
   font-size: 2em;
@@ -283,6 +283,7 @@ body {
 /*about section*/
 
 #about-section {
+  margin-top: 40px;
   margin-bottom: 70px;
   font-family: "Quicksand", sans-serif;
   display: flex;

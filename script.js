@@ -6,6 +6,7 @@ let rocks = document.getElementById("rocks");
 let forest = document.getElementById("forest");
 let water = document.getElementById("water");
 let header = document.getElementById("header");
+let liquid = document.getElementById("liquid");
 
 document.addEventListener("scroll", () => {
   let value = scrollY;
@@ -20,11 +21,13 @@ document.addEventListener("scroll", () => {
   forest.style.top = value * 0.25 + "px";
   header.style.top = value * 0.5 + "px";
   console.log(value);
-  if (value > 500) {
+  if (value > 400) {
     explore.style.visibility = "hidden";
+    liquid.style.visibility = "hidden";
   }
-  if (value < 500){
+  if (value < 400){
     explore.style.visibility = "visible";
+    liquid.style.visibility = "visible";
   }
 });
 

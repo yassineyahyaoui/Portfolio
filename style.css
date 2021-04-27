@@ -75,6 +75,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
 
 #hero::before {
@@ -116,22 +117,72 @@ body {
 }
 
 #explore {
-  text-decoration: none;
+  font-family: consolas;
   display: inline-block;
-  padding: 8px 30px;
-  background: #fff;
-  color: #094b65;
-  font-size: 1.2em;
-  font-weight: 500;
-  letter-spacing: 2px;
-  border-radius: 40px;
-  border: 1px #fff solid;
+  padding: 20px 50px 20px 40px;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  width: 200px;
+  overflow: hidden;
+  border-radius: 50px;
   transform: translateY(100px);
-  transition: 0.5s background-color ease;
 }
 
-#explore:hover {
-  background-color: rgb(255, 255, 255, 0.5);
+#explore span {
+  position: relative;
+  z-index: 1;
+  font-size: 20px;
+  letter-spacing: 8px;
+}
+
+#explore .liquid {
+  position: absolute;
+  left: 0;
+  top: -80px;
+  width: 200px;
+  height: 200px;
+  background: #3090A5;
+  opacity: 0.8;
+  box-shadow: inset 0 0 50px rgba(0,0,0,0.5);
+  transition: 0.5s;
+}
+
+#explore:hover .liquid {
+  top: -120px;
+  opacity: 1;
+  background: #06566E;
+}
+
+#explore .liquid:before, a .liquid:after {
+  content: '';
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -75%);
+}
+
+#explore .liquid:before {
+  border-radius: 45%;
+  background: rgba(235,235,235,1);
+  animation: animate 5s linear infinite;
+}
+
+#explore .liquid:after {
+  border-radius: 40%;
+  background: rgba(235,235,235,0.5);
+  animation: animate-explore 10s linear infinite;
+}
+
+@keyframes animate-explore {
+  0% {
+      transform: translate(-50%, -75%) rotate(0deg);
+  }
+  100% {
+      transform: translate(-50%, -75%) rotate(360deg);
+  }
 }
 
 /*skills*/
@@ -390,6 +441,12 @@ body {
   overflow: hidden;
   box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
   color: #fff !important;
+}
+
+@media only screen and (max-width: 30rem) {
+  .card, .card .card-side {
+    width: 100vw;
+  }
 }
 
 .front {

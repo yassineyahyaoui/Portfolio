@@ -8,6 +8,7 @@ let water = document.getElementById("water");
 let header = document.getElementById("header");
 let logo = document.getElementById("logo");
 let navbarLinks = document.querySelectorAll(".navbar-link");
+let activeNavbarLinks = document.querySelectorAll(".active");
 let liquid = document.getElementById("liquid");
 
 document.addEventListener("scroll", () => {
@@ -24,21 +25,37 @@ document.addEventListener("scroll", () => {
   forest.style.top = value * 0.25 + "px";
   header.style.top = value * 0.5 + "px";
   console.log(value);
+
   if (value > 400) {
     explore.style.visibility = "hidden";
     liquid.style.visibility = "hidden";
-  }
-  if (value < 400){
+  } else {
     explore.style.visibility = "visible";
     liquid.style.visibility = "visible";
   }
+
   if (value > 1050) {
     header.style.top = value + "px";
     header.style.background = "#094b65";
     navbarLinks.forEach(navbarLink => {
       navbarLink.style.color = "#fff";
     });
+    activeNavbarLinks.forEach(activeNavbarLink => {
+      activeNavbarLink.style.background = "#fff";
+      activeNavbarLink.style.color = "#094b65";
+    });
     logo.style.color = "#fff";
+  } else {
+    header.style.background = "transparent";
+    navbarLinks.forEach(navbarLink => {
+      navbarLink.style.color = "#094b65";
+      navbarLink.style.background = "transparent"
+    });
+    activeNavbarLinks.forEach(activeNavbarLink => {
+      activeNavbarLink.style.background = "#094b65";
+      activeNavbarLink.style.color = "#fff";
+    });
+    logo.style.color = "#094b65";
   }
 });
 

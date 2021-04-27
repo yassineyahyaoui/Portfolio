@@ -24,7 +24,6 @@ document.addEventListener("scroll", () => {
   rocks.style.top = value * -0.12 + "px";
   forest.style.top = value * 0.25 + "px";
   header.style.top = value * 0.5 + "px";
-  console.log(value);
 
   if (value > 400) {
     explore.style.visibility = "hidden";
@@ -37,38 +36,52 @@ document.addEventListener("scroll", () => {
   if (value > 1050) {
     header.style.top = value + "px";
     header.style.background = "#094b65";
-    navbarLinks.forEach(navbarLink => {
+    navbarLinks.forEach((navbarLink) => {
       navbarLink.style.color = "#fff";
+      navbarLink.style.background = "transparent";
+      navbarLink.addEventListener("mouseover", function (event) {
+        event.target.style.background = "#fff";
+        event.target.style.color = "#094b65";
+      });
+      navbarLink.addEventListener("mouseout", function (event) {
+        event.target.style.background = "#094b65";
+        event.target.style.color = "#fff";
+      });
     });
-    activeNavbarLinks.forEach(activeNavbarLink => {
+    activeNavbarLinks.forEach((activeNavbarLink) => {
       activeNavbarLink.style.background = "#fff";
       activeNavbarLink.style.color = "#094b65";
+      activeNavbarLink.addEventListener("mouseout", function (event) {
+        event.target.style.background = "#fff";
+        event.target.style.color = "#094b65";
+      });
     });
     logo.style.color = "#fff";
   } else {
     header.style.background = "transparent";
-    navbarLinks.forEach(navbarLink => {
+    navbarLinks.forEach((navbarLink) => {
       navbarLink.style.color = "#094b65";
-      navbarLink.style.background = "transparent"
+      navbarLink.style.background = "#fff";
+      navbarLink.addEventListener("mouseover", function (event) {
+        event.target.style.background = "#094b65";
+        event.target.style.color = "#fff";
+      });
+      navbarLink.addEventListener("mouseout", function (event) {
+        event.target.style.background = "#fff";
+        event.target.style.color = "#094b65";
+      });
     });
-    activeNavbarLinks.forEach(activeNavbarLink => {
+    activeNavbarLinks.forEach((activeNavbarLink) => {
       activeNavbarLink.style.background = "#094b65";
       activeNavbarLink.style.color = "#fff";
+      activeNavbarLink.addEventListener("mouseout", function (event) {
+        event.target.style.background = "#094b65";
+        event.target.style.color = "#fff";
+      });
     });
     logo.style.color = "#094b65";
   }
 });
-
-//burger navigation menu
-
-function myFunction() {
-  var x = document.getElementById("myLinks");
-  if (x.style.display === "block") {
-    x.style.display = "none";
-  } else {
-    x.style.display = "block";
-  }
-}
 
 //wave
 
@@ -80,8 +93,8 @@ let wave4 = document.getElementById("wave4");
 document.addEventListener("scroll", () => {
   let value = scrollY;
 
-  wave1.style.backgroundPosition = 400 + value * 4 +"px";
-  wave2.style.backgroundPosition = 300 + value * -4 +"px";
-  wave3.style.backgroundPosition = 200 + value * 2 +"px";
-  wave4.style.backgroundPosition = 100 + value * -2 +"px";
-})
+  wave1.style.backgroundPosition = 400 + value * 4 + "px";
+  wave2.style.backgroundPosition = 300 + value * -4 + "px";
+  wave3.style.backgroundPosition = 200 + value * 2 + "px";
+  wave4.style.backgroundPosition = 100 + value * -2 + "px";
+});

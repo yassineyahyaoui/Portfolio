@@ -23,6 +23,8 @@ body {
   min-height: 100vh;
 }
 
+/*header*/
+
 #header {
   position: absolute;
   top: 0;
@@ -32,6 +34,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
   z-index: 10000;
 }
 #header .logo {
@@ -45,6 +48,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 #header ul li {
@@ -130,6 +134,8 @@ body {
   background-color: rgb(255, 255, 255, 0.5);
 }
 
+/*skills*/
+
 .skills {
   position: relative;
   width: 100%;
@@ -153,6 +159,8 @@ body {
   transition: transform 0.5s ease;
 }
 
+/*1st wave*/
+
 #wave-section {
   height: 100px;
   background-color: #094b65;
@@ -166,7 +174,7 @@ body {
   height: 100px;
   background: url(./img/wave.png);
   background-size: 1000px 100px;
-  animation: animate 4s ease-in-out infinite;
+  animation: animate-wave 4s ease-in-out infinite;
   animation-delay: calc(var(--i) * 0.25s);
 }
 
@@ -194,7 +202,7 @@ body {
   background-position: 100px;
 }
 
-@keyframes animate {
+@keyframes animate-wave {
   0%,
   100% {
     transform: translateY(0px);
@@ -221,7 +229,7 @@ body {
   color: #000;
 }
 
-/**/
+/*about section*/
 
 #about-section {
   margin-bottom: 70px;
@@ -261,16 +269,69 @@ body {
 
 .about a {
   font-family: "Montserrat", sans-serif;
+  display: block;
+  position: relative;
+  padding: 1.3rem 2rem;
+  text-align: center;
+  border-radius: 50px;
   text-decoration: none;
   font-weight: 600;
   font-size: 0.8125rem;
-  text-transform: uppercase;
+  color: #00aeff;
+  overflow: hidden;
   cursor: pointer;
-  padding: 0.9375rem 1.875rem;
-  background-color: #ede947;
-  border-radius: 50px;
-  line-height: 1;
-  color: black;
+  width: 65%;
+  box-shadow: inset 0 0 50px rgba(235,235,235,0.9);
+  transition: box-shadow 0.5s;
+}
+
+.about a:hover {
+  box-shadow: none;
+  transition: box-shadow 0.5s;
+}
+
+.about a span {
+  position: relative;
+  z-index: 1;
+  transition: 1s;
+}
+
+.about a:hover span {
+  color: #fff;
+}
+
+.about a .wave {
+  position: absolute;
+  top: calc(100% + 22px);
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #00aeff;
+  transition: 1s;
+}
+
+.about :hover .wave {
+  top: 35%;
+}
+
+.about a .wave:before {
+  content: "";
+  position: absolute;
+  top: -22px;
+  left: 0;
+  width: 100%;
+  height: 22px;
+  background: url(./img/wave-button.png);
+  animation: animate-button 0.7s linear infinite;
+}
+
+@keyframes animate-button {
+  0% {
+    background-position-x: 0px;
+  }
+  100% {
+    background-position-x: 118px;
+  }
 }
 
 .left h1 {
@@ -278,7 +339,7 @@ body {
   font-size: 50px;
 }
 
-/**/
+/*card*/
 
 .arrow {
   margin-bottom: 20px;
@@ -318,7 +379,7 @@ body {
 
 .card-side {
   height: 15rem;
-  transition: all 1s ease;
+  transition: 1s ease;
   position: absolute;
   top: 0;
   left: 0;

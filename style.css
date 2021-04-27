@@ -23,18 +23,21 @@ body {
   min-height: 100vh;
 }
 
+/*header*/
+
 #header {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  padding: 30px 100px;
+  padding: 20px 100px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
   z-index: 10000;
 }
-#header .logo {
+#header #logo {
   color: #094b65;
   font-weight: 700;
   font-size: 2em;
@@ -45,6 +48,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 #header ul li {
@@ -71,6 +75,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
 
 #hero::before {
@@ -112,23 +117,75 @@ body {
 }
 
 #explore {
-  text-decoration: none;
+  font-family: consolas;
   display: inline-block;
-  padding: 8px 30px;
-  background: #fff;
-  color: #094b65;
-  font-size: 1.2em;
-  font-weight: 500;
-  letter-spacing: 2px;
-  border-radius: 40px;
-  border: 1px #fff solid;
+  padding: 20px 50px 20px 40px;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  width: 200px;
+  overflow: hidden;
+  border-radius: 50px;
   transform: translateY(100px);
-  transition: 0.5s background-color ease;
 }
 
-#explore:hover {
-  background-color: rgb(255, 255, 255, 0.5);
+#explore span {
+  position: relative;
+  z-index: 1;
+  font-size: 20px;
+  letter-spacing: 8px;
 }
+
+#explore .liquid {
+  position: absolute;
+  left: 0;
+  top: -80px;
+  width: 200px;
+  height: 200px;
+  background: #3090A5;
+  opacity: 0.8;
+  box-shadow: inset 0 0 50px rgba(0,0,0,0.5);
+  transition: 0.5s;
+}
+
+#explore:hover .liquid {
+  top: -120px;
+  opacity: 1;
+  background: #06566E;
+}
+
+#explore .liquid:before, a .liquid:after {
+  content: '';
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -75%);
+}
+
+#explore .liquid:before {
+  border-radius: 45%;
+  background: rgba(235,235,235,1);
+  animation: animate 5s linear infinite;
+}
+
+#explore .liquid:after {
+  border-radius: 40%;
+  background: rgba(235,235,235,0.5);
+  animation: animate-explore 10s linear infinite;
+}
+
+@keyframes animate-explore {
+  0% {
+      transform: translate(-50%, -75%) rotate(0deg);
+  }
+  100% {
+      transform: translate(-50%, -75%) rotate(360deg);
+  }
+}
+
+/*skills*/
 
 .skills {
   position: relative;
@@ -153,6 +210,8 @@ body {
   transition: transform 0.5s ease;
 }
 
+/*1st wave*/
+
 #wave-section {
   height: 100px;
   background-color: #094b65;
@@ -166,7 +225,7 @@ body {
   height: 100px;
   background: url(./img/wave.png);
   background-size: 1000px 100px;
-  animation: animate 4s ease-in-out infinite;
+  animation: animate-wave 4s ease-in-out infinite;
   animation-delay: calc(var(--i) * 0.25s);
 }
 
@@ -194,7 +253,7 @@ body {
   background-position: 100px;
 }
 
-@keyframes animate {
+@keyframes animate-wave {
   0%,
   100% {
     transform: translateY(0px);
@@ -221,9 +280,10 @@ body {
   color: #000;
 }
 
-/**/
+/*about section*/
 
 #about-section {
+  margin-top: 40px;
   margin-bottom: 70px;
   font-family: "Quicksand", sans-serif;
   display: flex;
@@ -261,16 +321,69 @@ body {
 
 .about a {
   font-family: "Montserrat", sans-serif;
+  display: block;
+  position: relative;
+  padding: 1.3rem 2rem;
+  text-align: center;
+  border-radius: 50px;
   text-decoration: none;
   font-weight: 600;
   font-size: 0.8125rem;
-  text-transform: uppercase;
+  color: #00aeff;
+  overflow: hidden;
   cursor: pointer;
-  padding: 0.9375rem 1.875rem;
-  background-color: #ede947;
-  border-radius: 50px;
-  line-height: 1;
-  color: black;
+  width: 65%;
+  box-shadow: inset 0 0 50px rgba(235,235,235,0.9);
+  transition: box-shadow 0.5s;
+}
+
+.about a:hover {
+  box-shadow: none;
+  transition: box-shadow 0.5s;
+}
+
+.about a span {
+  position: relative;
+  z-index: 1;
+  transition: 1s;
+}
+
+.about a:hover span {
+  color: #fff;
+}
+
+.about a .wave {
+  position: absolute;
+  top: calc(100% + 22px);
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #00aeff;
+  transition: 1s;
+}
+
+.about :hover .wave {
+  top: 35%;
+}
+
+.about a .wave:before {
+  content: "";
+  position: absolute;
+  top: -22px;
+  left: 0;
+  width: 100%;
+  height: 22px;
+  background: url(./img/wave-button.png);
+  animation: animate-button 0.7s linear infinite;
+}
+
+@keyframes animate-button {
+  0% {
+    background-position-x: 0px;
+  }
+  100% {
+    background-position-x: 118px;
+  }
 }
 
 .left h1 {
@@ -278,7 +391,7 @@ body {
   font-size: 50px;
 }
 
-/**/
+/*card*/
 
 .arrow {
   margin-bottom: 20px;
@@ -318,7 +431,7 @@ body {
 
 .card-side {
   height: 15rem;
-  transition: all 1s ease;
+  transition: 1s ease;
   position: absolute;
   top: 0;
   left: 0;
@@ -329,6 +442,12 @@ body {
   overflow: hidden;
   box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
   color: #fff !important;
+}
+
+@media only screen and (max-width: 30rem) {
+  .card, .card .card-side {
+    width: 100vw;
+  }
 }
 
 .front {

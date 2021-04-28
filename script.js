@@ -36,6 +36,7 @@ document.addEventListener("scroll", () => {
   if (value > 1050) {
     header.style.top = value + "px";
     header.style.background = "#094b65";
+    header.style.borderBottom = "1px solid #fff";
     navbarLinks.forEach((navbarLink) => {
       navbarLink.style.color = "#fff";
       navbarLink.style.background = "transparent";
@@ -59,6 +60,7 @@ document.addEventListener("scroll", () => {
     logo.style.color = "#fff";
   } else {
     header.style.background = "transparent";
+    header.style.borderBottom = "none";
     navbarLinks.forEach((navbarLink) => {
       navbarLink.style.color = "#094b65";
       navbarLink.style.background = "#fff";

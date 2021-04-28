@@ -3,14 +3,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
-html {
+*{
   box-sizing: border-box;
-}
-
-*,
-*:before,
-*:after {
-  box-sizing: inherit;
   scroll-behavior: smooth;
 }
 
@@ -21,6 +15,13 @@ body {
   overflow-x: hidden;
   background: #fff;
   min-height: 100vh;
+}
+
+svg {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 10vw;
 }
 
 /*header*/
@@ -279,13 +280,6 @@ body {
   position: relative;
 }
 
-#about-section svg {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 10vw;
-}
-
 .about {
   text-align: left;
   max-width: 500px;
@@ -479,17 +473,90 @@ body {
 
 #testimonial {
   position: relative;
-  padding: 100px;
-  background:#094b65;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #094b65;
+  overflow: hidden;
+  padding-bottom: 50px;
 }
 
-#testimonial h2 {
-  font-size: 3.5em;
-  color: #000;
-  margin-bottom: 10px;
+.swiper-container {
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 
-#testimonial p {
-  font-size: 1em;
-  color: #000;
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 320px;
+  background: #d1ebff;
+  box-shadow: 0 15px 50px rgba(0,0,0,0.2);
+  filter: blur(4px);
+  border-radius: 10px;
+}
+
+.swiper-slide-active {
+  filter: blur(0px);
+  background: #fff;
+}
+
+.testimonialBox {
+  position: relative;
+  width: 100%;
+  padding: 40px;
+  padding-top: 90px;
+  color: #999;
+}
+
+.testimonialBox .quote {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  opacity: 0.2;
+}
+
+.testimonialBox .details {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.testimonialBox .details .imgBx {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 10px;
+}
+
+.testimonialBox .details .imgBx img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.testimonialBox .details h3 {
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  color: #2196f3;
+  line-height: 1.1em;
+}
+
+.testimonialBox .details h3 span {
+  font-size: 12px;
+  color: #666;
+}
+
+.swiper-container-3d .swiper-slide-shadow-left,
+.swiper-container-3d .swiper-slide-shadow-right {
+  background-image: none;
 }

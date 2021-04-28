@@ -100,3 +100,20 @@ document.addEventListener("scroll", () => {
   wave3.style.backgroundPosition = 200 + value * 2 + "px";
   wave4.style.backgroundPosition = 100 + value * -2 + "px";
 });
+
+//testimonial
+
+let swiper = new Swiper(".swiper-container", {
+  effect: "coverflow",
+  grabCursor: true,
+  centeredSlides: true,
+  slidesPerView: "auto",
+  coverflowEffect: {
+      rotate: 0,
+      stretch: 0,
+      depth: 100,
+      modifier: 2,
+      slideShadows: true,
+  },
+  loop: true,
+});

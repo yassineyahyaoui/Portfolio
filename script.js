@@ -36,6 +36,7 @@ document.addEventListener("scroll", () => {
   if (value > 1050) {
     header.style.top = value + "px";
     header.style.background = "#094b65";
+    header.style.borderBottom = "1px solid #fff";
     navbarLinks.forEach((navbarLink) => {
       navbarLink.style.color = "#fff";
       navbarLink.style.background = "transparent";
@@ -59,6 +60,7 @@ document.addEventListener("scroll", () => {
     logo.style.color = "#fff";
   } else {
     header.style.background = "transparent";
+    header.style.borderBottom = "none";
     navbarLinks.forEach((navbarLink) => {
       navbarLink.style.color = "#094b65";
       navbarLink.style.background = "#fff";
@@ -97,4 +99,21 @@ document.addEventListener("scroll", () => {
   wave2.style.backgroundPosition = 300 + value * -4 + "px";
   wave3.style.backgroundPosition = 200 + value * 2 + "px";
   wave4.style.backgroundPosition = 100 + value * -2 + "px";
+});
+
+//testimonial
+
+let swiper = new Swiper(".swiper-container", {
+  effect: "coverflow",
+  grabCursor: true,
+  centeredSlides: true,
+  slidesPerView: "auto",
+  coverflowEffect: {
+      rotate: 0,
+      stretch: 0,
+      depth: 100,
+      modifier: 2,
+      slideShadows: true,
+  },
+  loop: true,
 });

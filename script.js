@@ -101,6 +101,15 @@ document.addEventListener("scroll", () => {
   wave4.style.backgroundPosition = 100 + value * -2 + "px";
 });
 
+//services
+
+VanillaTilt.init(document.querySelectorAll(".services-card"), {
+  max: 25,
+  speed: 400,
+  glare: true,
+  "max-glare": 1
+});
+
 //testimonial
 
 let swiper = new Swiper(".swiper-container", {

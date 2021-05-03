@@ -214,7 +214,7 @@ svg {
   transition: transform 0.5s ease;
 }
 
-/*1st wave*/
+/*1st wave section*/
 
 #wave-section {
   height: 100px;
@@ -469,6 +469,179 @@ svg {
   margin-left: 2rem;
 }
 
+/*services*/
+
+#services {
+  position: relative;
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  background: linear-gradient(#094b65, #12314e);
+}
+
+.services-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 1200px;
+  flex-wrap: wrap;
+  z-index: 1;
+  padding-bottom: 100px;
+}
+
+.services-container .services-card {
+  position: relative;
+  width: 280px;
+  height: 400px;
+  margin: 30px;
+  box-shadow: 20px 20px 50px rgba(0,0,0,0.5);
+  border-radius: 15px;
+  background: rgba(255,255,255,0.1);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid rgba(255,255,255,0.5);
+  border-left: 1px solid rgba(255,255,255,0.5);
+  backdrop-filter: blur(5px);
+}
+
+.services-container .services-card .services-content {
+  padding: 20px;
+  text-align: center;
+  transform: translateY(100px);
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.services-container .services-card:hover .services-content {
+  transform: translateY(0px);
+  opacity: 1;
+}
+
+.services-container .services-card .services-content h2 {
+position: absolute;
+top: -150px;
+right: 30px;
+font-size: 8em;  
+color: rgba(255,255,255,0.05);
+pointer-events: none;
+}
+
+.services-container .services-card .services-content h3 {
+  font-style: 1.8em;
+  color: #fff;
+  z-index: 1;
+}
+
+.services-container .services-card .services-content p {
+  font-size: 1em;
+  color: #fff;
+  font-weight: 300;
+}
+
+.services-container .services-card .services-content a {
+  position: relative;
+  display: inline-block;
+  padding: 8px 20px;
+  margin-top: 15px;
+  background: #fff;
+  color: #000;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: 500;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/*2nd wave section*/
+
+#wave-section-2 {
+  height: 100px;
+  background-color: #094b65;
+}
+
+#wave-section-2 .wave {
+  position: absolute;
+  bottom: 1;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: url(./img/wave.png);
+  background-size: 1000px 100px;
+}
+
+#wave-section-2 .wave#wave1 {
+  animation: animate2-wave1 20s linear infinite;
+  z-index: 1000;
+  opacity: 1;
+  animation-delay: 0s;
+  bottom: 1;
+}
+
+@keyframes animate2-wave1 {
+  0% {
+    background-position-x: 0px;
+  }
+  100% {
+    background-position-x: 1000px;
+  }
+}
+
+#wave-section-2 .wave#wave2 {
+  animation: animate2-wave2 15s linear infinite;
+  z-index: 999;
+  opacity: 0.5;
+  animation-delay: -5s;
+  bottom: 10;
+}
+
+@keyframes animate2-wave2 {
+  0% {
+    background-position-x: 0px;
+  }
+  100% {
+    background-position-x: -1000px;
+  }
+}
+
+#wave-section-2 .wave#wave3 {
+  animation: animate2-wave3 5s linear infinite;
+  z-index: 998;
+  opacity: 0.2;
+  animation-delay: -2s;
+  bottom: 15;
+}
+
+@keyframes animate2-wave3 {
+  0% {
+    background-position-x: 0px;
+  }
+  100% {
+    background-position-x: 1000px;
+  }
+}
+
+#wave-section-2 .wave#wave4 {
+  animation: animate2-wave4 10s linear infinite;
+  z-index: 997;
+  opacity: 0.7;
+  animation-delay: -5s;
+  bottom: 20;
+}
+
+@keyframes animate2-wave4 {
+  0% {
+    background-position-x: 0px;
+  }
+  100% {
+    background-position-x: -1000px;
+  }
+}
+
 /*testimonial*/
 #testimonial {
   position: relative;
@@ -558,92 +731,4 @@ svg {
 .swiper-container-3d .swiper-slide-shadow-left,
 .swiper-container-3d .swiper-slide-shadow-right {
   background-image: none;
-}
-
-/*services*/
-
-.services {
-  position: relative;
-  font-family: "Poppins", sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  width: 100%;
-  background: linear-gradient(#094b65, #12314e);
-}
-
-.services-container {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  max-width: 1200px;
-  flex-wrap: wrap;
-  z-index: 1;
-  padding-bottom: 100px;
-}
-
-.services-container .services-card {
-  position: relative;
-  width: 280px;
-  height: 400px;
-  margin: 30px;
-  box-shadow: 20px 20px 50px rgba(0,0,0,0.5);
-  border-radius: 15px;
-  background: rgba(255,255,255,0.1);
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-top: 1px solid rgba(255,255,255,0.5);
-  border-left: 1px solid rgba(255,255,255,0.5);
-  backdrop-filter: blur(5px);
-}
-
-.services-container .services-card .services-content {
-  padding: 20px;
-  text-align: center;
-  transform: translateY(100px);
-  opacity: 0;
-  transition: 0.5s;
-}
-
-.services-container .services-card:hover .services-content {
-  transform: translateY(0px);
-  opacity: 1;
-}
-
-.services-container .services-card .services-content h2 {
-position: absolute;
-top: -150px;
-right: 30px;
-font-size: 8em;  
-color: rgba(255,255,255,0.05);
-pointer-events: none;
-}
-
-.services-container .services-card .services-content h3 {
-  font-style: 1.8em;
-  color: #fff;
-  z-index: 1;
-}
-
-.services-container .services-card .services-content p {
-  font-size: 1em;
-  color: #fff;
-  font-weight: 300;
-}
-
-.services-container .services-card .services-content a {
-  position: relative;
-  display: inline-block;
-  padding: 8px 20px;
-  margin-top: 15px;
-  background: #fff;
-  color: #000;
-  border-radius: 20px;
-  text-decoration: none;
-  font-weight: 500;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }

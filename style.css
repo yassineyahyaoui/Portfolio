@@ -349,7 +349,7 @@ svg {
   transition: 1s;
 }
 
-.about :hover .wave {
+.about a:hover .wave {
   top: 35%;
 }
 
@@ -373,7 +373,7 @@ svg {
   }
 }
 
-.left h1 {
+.right h1 {
   font-family: "Quicksand", sans-serif;
   font-size: 50px;
 }
@@ -513,19 +513,12 @@ svg {
 .services-container .services-card .services-content {
   padding: 20px;
   text-align: center;
-  transform: translateY(100px);
-  opacity: 0;
   transition: 0.5s;
-}
-
-.services-container .services-card:hover .services-content {
-  transform: translateY(0px);
-  opacity: 1;
 }
 
 .services-container .services-card .services-content h2 {
 position: absolute;
-top: -150px;
+top: -100px;
 right: 30px;
 font-size: 8em;  
 color: rgba(255,255,255,0.05);

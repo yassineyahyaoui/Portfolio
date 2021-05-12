@@ -110,6 +110,13 @@ VanillaTilt.init(document.querySelectorAll(".services-card"), {
   "max-glare": 1
 });
 
+//complements
+
+VanillaTilt.init(document.querySelectorAll(".complements-card-container"), {
+  max: 25,
+  speed: 400
+});
+
 //testimonial
 
 let swiper = new Swiper(".swiper-container", {

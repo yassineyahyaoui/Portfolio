@@ -10,6 +10,7 @@ let logo = document.getElementById("logo");
 let navbarLinks = document.querySelectorAll(".navbar-link");
 let activeNavbarLinks = document.querySelectorAll(".active");
 let liquid = document.getElementById("liquid");
+const toggleMenu = document.querySelector('.toggle');
 
 document.addEventListener("scroll", () => {
   let value = scrollY;
@@ -84,6 +85,12 @@ document.addEventListener("scroll", () => {
     logo.style.color = "#094b65";
   }
 });
+
+//toggle
+
+toggleMenu.onclick = function() {
+  toggleMenu.classList.toggle('activate');
+};
 
 //wave
 

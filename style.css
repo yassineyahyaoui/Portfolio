@@ -72,6 +72,39 @@ svg {
   color: #fff;
 }
 
+@media (max-width: 992px) {
+  #header {
+    padding: 20px;
+  }
+  #header #logo {
+    font-size: 1.5em;
+  }
+  #header ul {
+    display: none;
+  }
+  .toggle {
+    position: relative;
+    width: 30px;
+    height: 30px;
+  }
+  .toggle i.menu {
+  color: #094b65;
+  font-size: 25px;
+  cursor: pointer;
+  }
+  .toggle i.close {
+  color: #094b65;
+  font-size: 25px;
+  cursor: pointer;
+  display: none;
+  }
+  toggle.activate i.menu{
+    display: none;
+  }
+}
+
+/*hero*/
+
 #hero {
   position: relative;
   width: 100%;
@@ -567,6 +600,7 @@ pointer-events: none;
 
 #complements .title {
     margin-top: 120px;
+    color: #094b65;
 }
 
 #complements h1, #complements h2{
@@ -803,5 +837,252 @@ pointer-events: none;
   }
   100% {
     background-position-x: -1000px;
+  }
+}
+
+/*contact*/
+
+#contact {
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+#contact .container {
+  position: relative;
+  min-width: 1100px;
+  min-height: 550px;
+  display: flex;
+  z-index: 1;
+}
+
+#contact .container .contact-info {
+  position: absolute;
+  top: 40px;
+  width: 350px;
+  height: calc(100% - 80px);
+  background: #094B65;
+  z-index: 1;
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 1px 20px 1px rgba(0,0,0,0.15);
+}
+
+#contact .container .contact-info h2 {
+  color: #fff;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+#contact .container .contact-info ul.info {
+  position: relative;
+  margin: 20px 0;
+  padding-left: 0px;
+}
+
+#contact .container .contact-info ul.info li {
+  position: relative;
+  list-style: none;
+  display: flex;
+  margin: 20px 0;
+  cursor: pointer;
+  align-items: flex-start;
+
+}
+
+#contact .container .contact-info ul.info li span:nth-child(1) {
+  width: 30px;
+  min-width: 30px;
+}
+
+#contact .container .contact-info ul.info li span:nth-child(1) img {
+  max-width: 100%;
+  filter: invert(1);
+}
+
+#contact .container .contact-info ul.info li span:nth-child(2) {
+  color: #fff;
+  margin-left: 10px;
+  font-weight: 300;
+}
+
+#contact .container .contact-info ul.sci {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  padding-left: 0px;
+}
+
+#contact .container .contact-info ul.sci li {
+  list-style: none;
+  margin-right: 15px;
+}
+
+#contact .container .contact-info ul.sci li a {
+  text-decoration: none;
+}
+
+#contact .container .contact-info ul.sci li a img {
+  filter: invert(1);
+}
+
+#contact .container .contact-form {
+  position: absolute;
+  padding: 70px 50px;
+  padding-left: 250px;
+  margin-left: 150px;
+  width: calc(100% - 150px);
+  height: 100%;
+  background: #fff;
+  box-shadow: 0 1px 50px 1px rgba(0,0,0,0.25);
+}
+
+#contact .container .contact-form h2 {
+  color: #094B65;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+#contact .container .contact-form .form-box {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding-top: 30px;
+}
+
+#contact .container .contact-form .form-box .input-box {
+  position: relative;
+  margin-bottom: 35px;
+}
+
+#contact .container .contact-form .form-box .input-box.w50 {
+  width: 47%;
+}
+
+#contact .container .contact-form .form-box .input-box.w100 {
+  width: 100%;
+}
+
+#contact .container .contact-form .form-box .input-box input,
+#contact .container .contact-form .form-box .input-box textarea {
+  width: 100%;
+  resize: none;
+  padding: 5px 0;
+  font-size: 18px;
+  font-weight: 300;
+  color: #333;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #777;
+}
+
+#contact .container .contact-form .form-box .input-box textarea {
+  height: 120px;
+}
+
+#contact .container .contact-form .form-box .input-box span {
+  position: absolute;
+  left: 0;
+  padding: 5px 0;
+  pointer-events: none;
+  font-size: 18px;
+  font-weight: 300;
+  transition: 0.3s;
+}
+
+#contact .container .contact-form .form-box .input-box input:focus ~ span,
+#contact .container .contact-form .form-box .input-box textarea:focus ~ span,
+#contact .container .contact-form .form-box .input-box input:valid ~ span,
+#contact .container .contact-form .form-box .input-box textarea:valid ~ span {
+  transform: translateY(-20px);
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  color: #094B65;
+  font-weight: 500;
+}
+
+#contact .container .contact-form .form-box .input-box input[type="submit"] {
+  position: relative;
+  cursor: pointer;
+  background: #094B65;
+  color: #fff;
+  border: none;
+  max-width: 150px;
+  padding: 12px;
+}
+
+#contact .container .contact-form .form-box .input-box input[type="submit"]:hover {
+  background: #3090A5;
+}
+
+@media (max-width : 1200px) {
+  #contact .container {
+      width: 90%;
+      min-width: auto;
+      margin: 20px;
+      box-shadow: 0 1px 50px 1px rgba(0,0,0,0.2);
+  }
+  #contact .container .contact-info {
+      top: 0;
+      height: 550px;
+      position: relative;
+      box-shadow: none;
+  }
+  #contact .container .contact-form {
+      position: relative;
+      width: calc(100% - 350px);
+      padding-left: 0;
+      margin-left: 0;
+      padding: 40px;
+      height: 550px;
+      box-shadow: none;
+  }
+}
+
+@media (max-width : 991px) {
+  #contact {
+    margin-top: 50px;
+  }
+  #contact .container {
+      display: flex;
+      flex-direction: column-reverse;
+  }
+  #contact .container .contact-info,
+  #contact .container .contact-form {
+      width: 100%;
+      height: auto;
+  }
+  #contact .container .contact-info {
+      flex-direction: row;
+  }
+  #contact .container .contact-info ul.sci {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+}
+
+@media (max-width : 600px) {
+  #contact .container .contact-form {
+      padding: 25px;
+  }
+  #contact .container .contact-info {
+      padding: 25px;
+      flex-direction: column;
+      align-items: flex-start;
+  }
+  #contact .container .contact-info ul.sci {
+      margin-top: 40px;
+  }
+  #contact .container .contact-form .form-box .input-box.w50 {
+      width: 100%;
   }
 }

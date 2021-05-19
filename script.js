@@ -5,12 +5,7 @@ let explore = document.getElementById("explore");
 let rocks = document.getElementById("rocks");
 let forest = document.getElementById("forest");
 let water = document.getElementById("water");
-let header = document.getElementById("header");
-let logo = document.getElementById("logo");
-let navbarLinks = document.querySelectorAll(".navbar-link");
-let activeNavbarLinks = document.querySelectorAll(".active");
 let liquid = document.getElementById("liquid");
-const toggleMenu = document.querySelector('.toggle');
 
 document.addEventListener("scroll", () => {
   let value = scrollY;
@@ -33,64 +28,42 @@ document.addEventListener("scroll", () => {
     explore.style.visibility = "visible";
     liquid.style.visibility = "visible";
   }
+});
 
-  if (value > 1050) {
-    header.style.top = value + "px";
-    header.style.background = "#094b65";
-    header.style.borderBottom = "1px solid #fff";
-    navbarLinks.forEach((navbarLink) => {
-      navbarLink.style.color = "#fff";
-      navbarLink.style.background = "transparent";
-      navbarLink.addEventListener("mouseover", function (event) {
-        event.target.style.background = "#fff";
-        event.target.style.color = "#094b65";
-      });
-      navbarLink.addEventListener("mouseout", function (event) {
-        event.target.style.background = "#094b65";
-        event.target.style.color = "#fff";
-      });
-    });
-    activeNavbarLinks.forEach((activeNavbarLink) => {
-      activeNavbarLink.style.background = "#fff";
-      activeNavbarLink.style.color = "#094b65";
-      activeNavbarLink.addEventListener("mouseout", function (event) {
-        event.target.style.background = "#fff";
-        event.target.style.color = "#094b65";
-      });
-    });
-    logo.style.color = "#fff";
+window.onscroll = function() {myFunction()};
+
+let header = document.getElementById("header");
+let sticky = header.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    header.classList.add("sticky")
   } else {
-    header.style.background = "transparent";
-    header.style.borderBottom = "none";
-    navbarLinks.forEach((navbarLink) => {
-      navbarLink.style.color = "#094b65";
-      navbarLink.style.background = "#fff";
-      navbarLink.addEventListener("mouseover", function (event) {
-        event.target.style.background = "#094b65";
-        event.target.style.color = "#fff";
-      });
-      navbarLink.addEventListener("mouseout", function (event) {
-        event.target.style.background = "#fff";
-        event.target.style.color = "#094b65";
-      });
-    });
-    activeNavbarLinks.forEach((activeNavbarLink) => {
-      activeNavbarLink.style.background = "#094b65";
-      activeNavbarLink.style.color = "#fff";
-      activeNavbarLink.addEventListener("mouseout", function (event) {
-        event.target.style.background = "#094b65";
-        event.target.style.color = "#fff";
-      });
-    });
-    logo.style.color = "#094b65";
+    header.classList.remove("sticky");
   }
+  if (window.pageYOffset < sticky) {
+    header.classList.add("sticky");
+  }
+}
+
+const navbarLinks = document.querySelectorAll(".navbar-link");
+navbarLinks.forEach(navbarLink => {
+  navbarLink.addEventListener("click", () => {
+    navbarLinks.forEach(navbarLink => {
+      navbarLink.classList.remove("active");
+    });
+    navbarLink.classList.add("active");
+  });
 });
 
 //toggle
 
-toggleMenu.onclick = function() {
-  toggleMenu.classList.toggle('activate');
-};
+const burger = document.getElementById("burger");
+const navUl = document.getElementById("nav-ul");
+
+burger.addEventListener("click", () => {
+  navUl.classList.toggle("show");
+})
 
 //wave
 

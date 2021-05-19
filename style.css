@@ -38,9 +38,16 @@ svg {
   align-items: center;
   flex-wrap: wrap;
   z-index: 10000;
-  border-bottom-left-radius: 30px;
-  border-bottom-right-radius: 30px;
 }
+
+#header.sticky {
+  position: fixed!important;
+  top: 0!important;
+  width: 100%!important;
+  background-color: #fff;
+  box-shadow: 0px 10px 10px #00000015;
+}
+
 #header #logo {
   color: #094b65;
   font-weight: 700;
@@ -72,34 +79,38 @@ svg {
   color: #fff;
 }
 
-@media (max-width: 992px) {
-  #header {
-    padding: 20px;
-  }
-  #header #logo {
-    font-size: 1.5em;
-  }
-  #header ul {
-    display: none;
-  }
-  .toggle {
-    position: relative;
-    width: 30px;
-    height: 30px;
-  }
-  .toggle i.menu {
+.burger {
+  background-color: transparent;
+  border: 0;
   color: #094b65;
-  font-size: 25px;
-  cursor: pointer;
-  }
-  .toggle i.close {
-  color: #094b65;
-  font-size: 25px;
+  font-size: 20px;
   cursor: pointer;
   display: none;
+}
+
+.burger:focus {
+  outline: none;
+}
+
+@media (max-width: 992px) {
+  #header {
+    justify-content: space-around;
+    padding: 10px 0;
   }
-  toggle.activate i.menu{
+  ul#nav-ul {
     display: none;
+  }
+  .burger {
+    display: block;
+  }
+  ul#nav-ul.show {
+    display: flex;
+    flex-basis: 100%;
+  }
+  ul#nav-ul.show li {
+    display: flex;
+    flex-basis: 100%;
+    justify-content: center;
   }
 }
 
@@ -551,7 +562,7 @@ svg {
 
 .services-container .services-card .services-content h2 {
 position: absolute;
-top: -100px;
+top: -10px;
 right: 30px;
 font-size: 8em;  
 color: rgba(255,255,255,0.05);
@@ -1091,17 +1102,12 @@ pointer-events: none;
 
 /*footer*/
 
-/* variables */
 :root {
-  /* color palette */
   --VeryPaleCyan: #ebfbff;
   --VeryDarkCyan: #00252e;
   --GrayishBlue: #808d99;
-  /* root font size: 1rem = 10px */
-  font-family: 'Open Sans', sans-serif;
 }
 
-/* reset */
 footer, p, a, ul, li, h1, h2, h3 {
   margin: 0;
   padding: 0;
@@ -1116,8 +1122,6 @@ footer .text-gray {
   color: var(--GrayishBlue);
 }
 
-/* base styles */
-/* styles that won't change by the size of the devices */
 footer button {
   border: none;
 }
@@ -1165,6 +1169,7 @@ footer .content-card {
 
 footer {
   background-color: var(--VeryDarkCyan);
+  font-family: 'Open Sans', sans-serif;
 }
 
 footer .cta {
@@ -1176,10 +1181,10 @@ footer .cta {
   padding: 2.5rem 0;
 }
 
-footer .bottom .info .icon img {
+footer .bottom .info .icon i {
   fill: #fff;
   color: #fff;
-  width: 15px;
+  font-size: 15px;
 }
 
 footer p, footer i {
@@ -1187,7 +1192,7 @@ footer p, footer i {
 }
 
 footer a {
-  color: #666600;
+  color: #bbbb00;
 }
 
 footer .location,
@@ -1195,10 +1200,6 @@ footer .contact,
 footer .email {
   display: flex;
   margin-bottom: 1.5rem;
-}
-
-footer .location .icon {
-  margin-top: 3.75rem;
 }
 
 footer .contact,
@@ -1247,6 +1248,7 @@ footer .socials .icon i {
 
 .text-xs {
   font-size: 0.75rem;
+  line-height: 1.5;
 }
 
 .text-default {
@@ -1307,9 +1309,7 @@ footer {
   padding-bottom: 1.25rem;
 }
 
-/* desktop styles */
 @media screen and (min-width: 1440px) {
-  /* font sizes */
   .text-default {
     font-size: 1.125rem;
   }

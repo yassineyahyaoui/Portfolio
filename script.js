@@ -46,6 +46,16 @@ function myFunction() {
   }
 }
 
+const navbarLinks = document.querySelectorAll(".navbar-link");
+navbarLinks.forEach(navbarLink => {
+  navbarLink.addEventListener("click", () => {
+    navbarLinks.forEach(navbarLink => {
+      navbarLink.classList.remove("active");
+    });
+    navbarLink.classList.add("active");
+  });
+});
+
 //toggle
 
 const burger = document.getElementById("burger");
